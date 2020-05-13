@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.container{
+			margin-top: 100px;
+		}
+		.row{
+			margin-top: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<input type="text" id="maintxt" class="form-control" name="" disabled>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<input type="text" id="txt" class="form-control" name=""placeholder="Enter The text" onkeypress="myFunction()">
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		makeid();
+		function makeid() {
+		   var result           = '';
+		   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		   var charactersLength = characters.length;
+		   for ( var i = 0; i < 6; i++ ) {
+		      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		   }
+		   document.getElementById('maintxt').value=result;
+		}
+
+		debugger;
+		var arr=new Array;
+		var txt=document.getElementById('maintxt').value;
+		function myFunction() {
+		var x = event.which || event.keyCode;
+		arr.push(String.fromCharCode(x));
+		if(txt.length == arr.length){
+			var y=arr.join('');
+			if(y==txt){
+				location.replace("https://www.google.com")
+			}
+		}
+		}
+	</script>
+</body>
+</html>
